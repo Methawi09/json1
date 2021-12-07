@@ -12,7 +12,7 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th><th>First Name</th><th>Last Name</th>
+                <th>ID</th><th>title</th><th>Details</th>
             </tr>
         </thead>
         <tbody id="tblPosts">
@@ -23,7 +23,7 @@
 </body>
 <script>
     function loadPosts(){
-        var url = "https://jsonplaceholder.typicode.com/Posts";
+        var url = "https://jsonplaceholder.typicode.com/posts";
         $.getJSON(url)
             .done((data)=>{
                 console.log(data);
