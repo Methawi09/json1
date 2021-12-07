@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script></head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
 <body>
-    <button id="btnJSON1">json1</button>
-    Name : <span id="fname"></span> <br/>
-    sName : <span id="lname"></span>
+ 
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>First Name</th><th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody id="tblStudent">
+        </tbody>
+    </table>
 </body>
 <script>
-    function loadJSON(){
-        var url = "https://cj-android-demon.herokuapp.com/json2.php";
+ 
+function loadJSON(){
+    var url = "https://cj-android-demon.herokuapp.com/json2.php";
 
-        $.getJSON(url)
-            .done((data)=>{
-                console.log(data);
-                console.log(data[1]);
-                console.log(data[2].fname);
-
-               // $("fname").text(data.fname);
-            })
-            .fail((xhr, status, err)=>{
+    $.getJSON(url)
+        .done((data)=>{
+            console.log(data);
+            $.each(data, (k, item)=>{
+                console.log(k);
+                console.log(item);
+                var line = "<tr>";
+                    line += "<td>"+ (k+1) +"</td>"
+                    line += "<td>"+item.fname+"</td>"
+                    line += "<td>"+item.lname+"</td>"
+                    line += "</tr>";
+                $("#tblDant").append(line);
 
             });
-    }
+        })
+        .fail((xhr, status, err)=>{
 
+        });
+}
 
-    
-
-    $(()=>{
-        $("btnJSONn1").click(loadJSON)
-
-    })
+$(()=>{
+    loadJSON();
+});
 </script>
-
 </html>
