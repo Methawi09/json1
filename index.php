@@ -32,17 +32,16 @@
                     var line = "<tr>";
                         line += "<td>" + item.id + "</td>";
                         line += "<td>" + item.title + "</td>";
-                        line += "<td>" + item.userid + "</td>";
+                        line += item.body + "</td>";
                         line += "</tr>";
-                        $("#tblPosts").append(line);
-
-
+                    $("#tblPosts").append(line);
                 });
+            })
             .fail((xhr, status, err)=>{
             });
 
-    })
     }
+
 </script>
 
 </html>
