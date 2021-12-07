@@ -7,12 +7,12 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script></head>
 <body>
-    <button id="btnjson1">json1</button>
+    <button id="btnJSON1">json1</button>
     Name : <span id="fname"></span> <br/>
     sName : <span id="lname"></span>
 </body>
 <script>
-    function loadjson() {
+    function loadJSON(){
         var url = "https://cj-android-demon.herokuapp.com/json1.php";
 
         $.getJSON(url)
@@ -20,7 +20,7 @@
                 console.log(data);
                 $("fname").text(data.fname);
             })
-            .fail((xhr, status, err) => {
+            .fail((xhr, status, err)=>{
 
             });
     }
@@ -28,7 +28,7 @@
     
 
     $(()=>{
-        $("btnjson1").click(loadjson)
+        $("btnJSONn1").click(loadJSON)
 
     })
 </script>
