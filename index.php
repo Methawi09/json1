@@ -12,16 +12,19 @@
     sName : <span id="lname"></span>
 </body>
 <script>
-        function loadjson() {
+    function loadjson() {
         var url = "https://cj-android-demon.herokuapp.com/json1.php";
+
         $.getJSON(url)
-            .done(() => {
+            .done((data)=>{
                 console.log(data);
+                $("fname").text(data.fname);
             })
             .fail((xhr, status, err) => {
 
             });
-        }
+    }
+
     
 
     $(()=>{
