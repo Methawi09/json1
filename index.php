@@ -21,7 +21,7 @@
     </table>
 </div>
 <div id="detail">
-    sssssss
+    <a href="https://jsonplaceholder.typicode.com/posts/details"></a>      
 </div>
     
 </body>
